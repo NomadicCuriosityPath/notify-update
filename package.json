@@ -1,6 +1,12 @@
 {
   "name": "raiden-compare",
-  "version": "1.0.0",
+  "keywords": [
+    "version",
+    "compare",
+    "notify update",
+    "version compare"
+  ],
+  "version": "1.0.1",
   "type": "module",
   "module": "dist/index.cjs",
   "main": "dist",
@@ -12,6 +18,10 @@
   "license": "MIT",
   "author": {
     "name": "wangwk"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/turbokai1998/raiden-compare"
   },
   "scripts": {
     "dev": "vite",
