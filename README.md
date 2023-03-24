@@ -1,6 +1,6 @@
 # raiden-compare
 
-[![npm version](https://badge.fury.io/js/raiden-compare.svg)](https://www.npmjs.com/package/raiden-compare) [![downloads](https://img.shields.io/npm/dm/raiden-compare.svg)](https://www.npmjs.com/package/raiden-compare) [![README](https://img.shields.io/badge/README-English-blue.svg)](https://chat.openai.com/README.md) [![README](https://img.shields.io/badge/README-%E4%B8%AD%E6%96%87-blue.svg)](README-zh_CN.md)
+[![npm version](https://badge.fury.io/js/raiden-compare.svg)](https://www.npmjs.com/package/raiden-compare) [![downloads](https://img.shields.io/npm/dm/raiden-compare.svg)](https://www.npmjs.com/package/raiden-compare) [![README](https://img.shields.io/badge/README-English-blue.svg)](https://chat.openai.com/README.md) [![README](https://img.shields.io/badge/README-%E4%B8%AD%E6%96%87-blue.svg)](https://github.com/turbokai1998/raiden-compare/blob/main/README-zh_CN.md)
 
 Raiden Compare is a library for comparing local and remote application versions and notifying users when a new version is available.
 
