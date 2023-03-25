@@ -1,21 +1,21 @@
-# raiden-compare
+# Notify-Update
 
-[![npm version](https://badge.fury.io/js/raiden-compare.svg)](https://www.npmjs.com/package/raiden-compare) [![downloads](https://img.shields.io/npm/dm/raiden-compare.svg)](https://www.npmjs.com/package/raiden-compare) [![README](https://img.shields.io/badge/README-English-blue.svg)](README.md) [![README](https://img.shields.io/badge/README-中文-blue.svg)](https://github.com/turbokai1998/raiden-compare/blob/main/README-zh_CN.md)
+[![npm version](https://badge.fury.io/js/notify-update.svg)](https://www.npmjs.com/package/notify-update) [![downloads](https://img.shields.io/npm/dm/notify-update.svg)](https://www.npmjs.com/package/notify-update) [![README](https://img.shields.io/badge/README-English-blue.svg)](README.md) [![README](https://img.shields.io/badge/README-中文-blue.svg)](https://github.com/turbokai1998/notify-update/blob/main/README-zh_CN.md)
 
 
 
-Raiden Compare 是一个用于比较本地和远程应用程序版本并在有新版本时通知用户的库。
+Notify-Update 是一个用于比较本地和远程应用程序版本并在有新版本时通知用户的库。
 
 ## 安装
 
 ```bash
-npm install raiden-compare
+npm install notify-update
 ```
 
 ## 使用方法
 
 ```typescript
-import compareVersionLoop, { loopOptions } from "raiden-compare";
+import compareVersionLoop, { loopOptions } from "notify-update";
 import releaseInfo from '/public/release-version.json'
 
 const option: loopOptions = {

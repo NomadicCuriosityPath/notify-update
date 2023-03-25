@@ -1,12 +1,13 @@
 {
-  "name": "raiden-compare",
+  "name": "notify-update",
   "keywords": [
     "version",
     "compare",
     "notify update",
-    "version compare"
+    "version compare",
+    "version update"
   ],
-  "version": "1.0.1",
+  "version": "1.0.0",
   "type": "module",
   "module": "dist/index.cjs",
   "main": "dist",
@@ -21,7 +22,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/turbokai1998/raiden-compare"
+    "url": "https://github.com/turbokai1998/notify-update"
   },
   "scripts": {
     "dev": "vite",
