@@ -7,9 +7,9 @@
     "version compare",
     "version update"
   ],
-  "version": "1.0.0",
+  "version": "0.0.2",
   "type": "module",
-  "module": "dist/index.cjs",
+  "module": "dist/index.js",
   "main": "dist",
   "files": [
     "dist",

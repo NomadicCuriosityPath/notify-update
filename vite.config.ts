@@ -6,8 +6,10 @@ export default defineConfig({
   build: {
     lib: {
       entry: "src/lib/index.ts",
-      name: "raiden-compare",
-      fileName: "index",
+      name: "notify-update",
+      fileName: () => {
+        return "index.js";
+      },
       formats: ["cjs"],
     },
   },
