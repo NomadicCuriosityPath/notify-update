@@ -7,10 +7,11 @@
     "version compare",
     "version update"
   ],
-  "version": "0.0.4",
+  "version": "1.0.0",
   "type": "module",
   "main": "dist",
   "files": [
+    "assets",
     "dist",
     "types/lib"
   ],
