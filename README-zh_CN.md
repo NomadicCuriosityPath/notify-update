@@ -3,6 +3,7 @@
 [![npm version](https://badge.fury.io/js/notify-update.svg)](https://www.npmjs.com/package/notify-update) [![downloads](https://img.shields.io/npm/dm/notify-update.svg)](https://www.npmjs.com/package/notify-update) [![README](https://img.shields.io/badge/README-English-blue.svg)](README.md) [![README](https://img.shields.io/badge/README-中文-blue.svg)](https://github.com/turbokai1998/notify-update/blob/main/README-zh_CN.md)
 
 
+<img src="./assets/demo.gif" alt="效果" style="zoom: 25%;" />
 
 Notify-Update 是一个用于比较本地和远程应用程序版本并在有新版本时通知用户的库。
 
@@ -35,7 +36,7 @@ compareVersionLoop(option);
 - `remoteUrl`：获取最新版本信息的 URL。默认为 `"/release-version.json"`。
 - `loopTime`：检查新版本的间隔时间（以毫秒为单位）。默认为 `2000`。
 - `lang`：通知消息显示的语言。默认为 `"zh"`。
-- `langData`：包含每种语言的翻译消息的对象。
+- `langDataObj`：包含每种语言的翻译消息的对象。
 - `appId`：用于标识应用程序的字符串。当您在同一页上有多个应用程序时，这很有用。
 
 ## 注意

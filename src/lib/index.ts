@@ -1,6 +1,10 @@
 import axios from "axios";
 import Notice from "./Notice.svelte";
 
+export type langDataType = Record<"title" | "ignore" | "upgrade", string>;
+export type langDataMapType = Record<string, langDataType>;
+export type langType = keyof langDataMapType;
+
 // 获取最新版本版本信息
 function getReleaseVersion(url: string = "/release-version.json") {
   return new Promise((resolve, reject) => {
@@ -23,14 +27,26 @@ function getReleaseVersion(url: string = "/release-version.json") {
   });
 }
 
-// 建议更新
-function noticeReleaseInfo(info, ignoreCb, langData, lang) {
+/**
+ * 通知更新弹窗
+ * @param info
+ * @param ignoreCb
+ * @param langDataObj 多语言数据
+ * @param lang 语言 key，默认为 zh 即中文，若 langDataObj 中没有对应的语言，则为默认中文提示
+ * @returns
+ */
+function noticeReleaseInfo(
+  info: any,
+  ignoreCb: () => void,
+  langDataObj?: langDataMapType,
+  lang?: langType
+) {
   const releaseMsgInfo = Array.isArray(info) ? info : [info];
   const noticeComponent = new Notice({
     target: document.body,
     props: {
       info: releaseMsgInfo.filter((i) => i),
-      langData,
+      langDataObj,
       lang,
     },
   });
@@ -55,26 +71,23 @@ function noticeReleaseInfo(info, ignoreCb, langData, lang) {
  */
 
 let mounted = false;
-let compareVersionInterval = null; // 版本比较轮询的计时器
+let compareVersionInterval: number | undefined; // 版本比较轮询的计时器
 let versionLock = true; // 修改version的锁
-let initialOption = {}; // 保存应用传入的option配置
 
 export type loopOptions = {
   version: number | string;
   appId?: string;
   loopTime?: number;
-  langData?: any;
-  lang?: string;
+  langDataObj?: langDataMapType;
+  lang?: langType;
   remoteUrl?: string;
-}
+};
 
 function compareVersionLoop(option: loopOptions) {
   if (mounted) return;
-  initialOption = option;
   let releaseVersion = option.version; // 本地版本version
   let key = "releaseVersion";
   option.appId && (key = `releaseVersion_${option.appId}`);
-
   Object.defineProperty(window, key, {
     configurable: false,
     get() {
@@ -91,14 +104,12 @@ function compareVersionLoop(option: loopOptions) {
 
   if (compareVersionInterval) {
     clearInterval(compareVersionInterval);
-    compareVersionInterval = null;
+    compareVersionInterval = 0;
   }
 
   let existNotice = false; // 是否已经存在通知
   compareVersionInterval = setInterval(() => {
     getReleaseVersion(option.remoteUrl).then((res: any = {}) => {
-      console.log("最新版本：", res.version);
-      console.log(`window.${key}`, window[key]);
       if (res.version && !existNotice && res.version !== window[key]) {
         existNotice = true;
 
@@ -114,7 +125,7 @@ function compareVersionLoop(option: loopOptions) {
             versionLock = false;
             window[key] = res.version;
           },
-          option.langData,
+          option.langDataObj,
           option.lang
         );
       }

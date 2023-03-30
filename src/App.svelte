@@ -1,5 +1,9 @@
 <script lang="ts">
-  
+  import cv from "./lib/index";
+
+  cv({
+    version: "123",
+  });
 </script>
 
 <main>
@@ -7,5 +11,4 @@
 </main>
 
 <style>
-  
 </style>
