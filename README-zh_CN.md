@@ -3,7 +3,7 @@
 [![npm version](https://badge.fury.io/js/notify-update.svg)](https://www.npmjs.com/package/notify-update) [![downloads](https://img.shields.io/npm/dm/notify-update.svg)](https://www.npmjs.com/package/notify-update) [![README](https://img.shields.io/badge/README-English-blue.svg)](README.md) [![README](https://img.shields.io/badge/README-中文-blue.svg)](https://github.com/turbokai1998/notify-update/blob/main/README-zh_CN.md)
 
 
-<img src="./assets/demo.gif" alt="效果" style="zoom: 25%;" />
+<img src="https://github.com/turbokai1998/notify-update/blob/main/assets/demo.gif" alt="效果" style="zoom: 25%;" />
 
 Notify-Update 是一个用于比较本地和远程应用程序版本并在有新版本时通知用户的库。
 
